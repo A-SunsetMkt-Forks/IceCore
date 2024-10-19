@@ -16,4 +16,8 @@ public class hook_core{
     public void daysmatter_hook(XC_LoadPackage.LoadPackageParam lpparam){
         com_clover_daysmatter_vip.hook_init(lpparam);
     }
+
+    public void webn_stopapp(XC_LoadPackage.LoadPackageParam lpparam){
+        webn_stopapp_vip.hook_init(lpparam);
+    }
 }

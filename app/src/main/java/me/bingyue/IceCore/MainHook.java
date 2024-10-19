@@ -12,7 +12,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 public class MainHook implements IXposedHookLoadPackage {
 
 
-    public static final String[] app_PackName  = {"com.when.coco", "me.mapleaf.calendar", "com.clover.daysmatter"};
+    public static final String[] app_PackName  = {"com.when.coco", "me.mapleaf.calendar", "com.clover.daysmatter", "web1n.stopapp"};
     private static final Map<String, String> hook_method_app;
 
     static {
@@ -20,6 +20,7 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("com.when.coco", "san_liu_wu_hook");
         hook_method_app.put("me.mapleaf.calendar", "yi_ye_hook");
         hook_method_app.put("com.clover.daysmatter", "daysmatter_hook");
+        hook_method_app.put("web1n.stopapp", "webn_stopapp");
     }
 
     @Override
