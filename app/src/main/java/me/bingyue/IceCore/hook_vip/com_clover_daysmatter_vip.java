@@ -1,4 +1,4 @@
-package me.bingyue.IceCore;
+package me.bingyue.IceCore.hook_vip;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package me.bingyue.IceCore;
+package me.bingyue.IceCore.hook_vip;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;

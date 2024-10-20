@@ -30,3 +30,8 @@
 -keepattributes SourceFile,LineNumberTable
 -optimizations !code/simplification/cast,!field/*,!class/merging/*
 -keep public class me.bingyue.IceCore.MainHook
+-keep public class me.bingyue.IceCore.hook_core
+-keep class me.bingyue.IceCore.hook_core {
+    public void *(de.robv.android.xposed.callbacks.XC_LoadPackage$LoadPackageParam);
+}
+

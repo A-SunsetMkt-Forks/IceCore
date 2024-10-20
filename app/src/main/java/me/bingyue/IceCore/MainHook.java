@@ -17,10 +17,10 @@ public class MainHook implements IXposedHookLoadPackage {
 
     static {
         hook_method_app = new HashMap<>();
-        hook_method_app.put("com.when.coco", "san_liu_wu_hook");
-        hook_method_app.put("me.mapleaf.calendar", "yi_ye_hook");
-        hook_method_app.put("com.clover.daysmatter", "daysmatter_hook");
-        hook_method_app.put("web1n.stopapp", "webn_stopapp");
+        hook_method_app.put("com.when.coco", "a");
+        hook_method_app.put("me.mapleaf.calendar", "b");
+        hook_method_app.put("com.clover.daysmatter", "c");
+        hook_method_app.put("web1n.stopapp", "d");
     }
 
     @Override
