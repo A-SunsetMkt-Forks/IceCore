@@ -12,7 +12,15 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 public class MainHook implements IXposedHookLoadPackage {
 
 
-    public static final String[] app_PackName  = {"com.when.coco", "me.mapleaf.calendar", "com.clover.daysmatter", "web1n.stopapp"};
+    public static final String[] app_PackName  = {
+            "com.when.coco",
+            "me.mapleaf.calendar",
+            "com.clover.daysmatter",
+            "web1n.stopapp",
+            "com.lerist.fakelocation",
+            "com.dragon.read",
+            "com.duitang.main"
+    };
     private static final Map<String, String> hook_method_app;
 
     static {
@@ -21,6 +29,9 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("me.mapleaf.calendar", "b");
         hook_method_app.put("com.clover.daysmatter", "c");
         hook_method_app.put("web1n.stopapp", "d");
+        hook_method_app.put("com.lerist.fakelocation", "e");
+        hook_method_app.put("com.dragon.read", "f");
+        hook_method_app.put("com.duitang.main", "g");
     }
 
     @Override
@@ -28,8 +39,12 @@ public class MainHook implements IXposedHookLoadPackage {
         if (check_app_package_name(lpparam.packageName)){
             hook_core hookInstance = new hook_core();
             Class<?> clazz = hookInstance.getClass();
-            Method method = clazz.getMethod(hook_method_app.get(lpparam.packageName), XC_LoadPackage.LoadPackageParam.class);
-            method.invoke(hookInstance, lpparam);
+            try {
+                Method method = clazz.getMethod(hook_method_app.get(lpparam.packageName), XC_LoadPackage.LoadPackageParam.class);
+                method.invoke(hookInstance, lpparam);
+            } catch (Exception e){
+
+            }
         }
     }
 

@@ -5,6 +5,9 @@ import me.bingyue.IceCore.hook_vip.com_clover_daysmatter_vip;
 import me.bingyue.IceCore.hook_vip.com_when_coco_vip;
 import me.bingyue.IceCore.hook_vip.me_mapleaf_calendar_vip;
 import me.bingyue.IceCore.hook_vip.webn_stopapp_vip;
+import me.bingyue.IceCore.hook_vip.fake_location_vip;
+import me.bingyue.IceCore.hook_ad.fanqie_xiao_suo;
+import me.bingyue.IceCore.hook_vip.duitang_vip;
 
 
 public class hook_core{
@@ -23,4 +26,18 @@ public class hook_core{
     public void d(XC_LoadPackage.LoadPackageParam lpparam){
         webn_stopapp_vip.hook_init(lpparam);
     }
+
+    public void e(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException {
+        fake_location_vip.hook_init(lpparam);
+    }
+
+    public void f(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException{
+        fanqie_xiao_suo.hook_init(lpparam);
+        fanqie_xiao_suo.hook_ad_base(lpparam);
+    }
+
+    public void g(XC_LoadPackage.LoadPackageParam lpparam){
+        duitang_vip.hook_init(lpparam);
+    }
+
 }
