@@ -21,6 +21,7 @@ public class MainHook implements IXposedHookLoadPackage {
             "com.dragon.read",
             "com.duitang.main",
             "com.duapps.recorder",
+            "com.wangc.bill"
     };
 
     public static final String[] app_PackName_Native  = {
@@ -38,6 +39,7 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("com.dragon.read", "f");
         hook_method_app.put("com.duitang.main", "g");
         hook_method_app.put("com.duapps.recorder", "h");
+        hook_method_app.put("com.wangc.bill", "k");
     }
 
     @Override
