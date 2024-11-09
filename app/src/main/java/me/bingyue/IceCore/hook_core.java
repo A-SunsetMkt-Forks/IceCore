@@ -8,6 +8,7 @@ import me.bingyue.IceCore.hook_vip.webn_stopapp_vip;
 import me.bingyue.IceCore.hook_vip.fake_location_vip;
 import me.bingyue.IceCore.hook_ad.fanqie_xiao_suo;
 import me.bingyue.IceCore.hook_vip.duitang_vip;
+import me.bingyue.IceCore.hook_vip.xiaoxiong_vip;
 
 
 public class hook_core{
@@ -31,6 +32,6 @@ public class hook_core{
         duitang_vip.hook_init(lpparam);
     }
 
-    public void h(XC_LoadPackage.LoadPackageParam lpparam) {}
+    public void h(XC_LoadPackage.LoadPackageParam lpparam) { xiaoxiong_vip.hook_init(lpparam); }
 
 }

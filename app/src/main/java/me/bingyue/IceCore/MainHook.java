@@ -20,7 +20,7 @@ public class MainHook implements IXposedHookLoadPackage {
             "com.lerist.fakelocation",
             "com.dragon.read",
             "com.duitang.main",
-            "com.duapps.recorder"
+            "com.duapps.recorder",
     };
 
     public static final String[] app_PackName_Native  = {
