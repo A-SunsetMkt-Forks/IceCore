@@ -15,29 +15,22 @@ public class hook_core{
         com_when_coco_vip.hook_init(lpparam);
     }
 
-    public void b(XC_LoadPackage.LoadPackageParam lpparam) {
-        me_mapleaf_calendar_vip.hook_init(lpparam);
-    }
+    public void b(XC_LoadPackage.LoadPackageParam lpparam) { me_mapleaf_calendar_vip.hook_init(lpparam); }
 
-    public void c(XC_LoadPackage.LoadPackageParam lpparam){
-        com_clover_daysmatter_vip.hook_init(lpparam);
-    }
+    public void c(XC_LoadPackage.LoadPackageParam lpparam){ com_clover_daysmatter_vip.hook_init(lpparam); }
 
     public void d(XC_LoadPackage.LoadPackageParam lpparam){
         webn_stopapp_vip.hook_init(lpparam);
     }
 
-    public void e(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException {
-        fake_location_vip.hook_init(lpparam);
-    }
+    public void e(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException { fake_location_vip.hook_init(lpparam); }
 
-    public void f(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException{
-        fanqie_xiao_suo.hook_init(lpparam);
-        fanqie_xiao_suo.hook_ad_base(lpparam);
-    }
+    public void f(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException{ fanqie_xiao_suo.hook_init(lpparam); }
 
     public void g(XC_LoadPackage.LoadPackageParam lpparam){
         duitang_vip.hook_init(lpparam);
     }
+
+    public void h(XC_LoadPackage.LoadPackageParam lpparam) {}
 
 }

@@ -19,7 +19,12 @@ public class MainHook implements IXposedHookLoadPackage {
             "web1n.stopapp",
             "com.lerist.fakelocation",
             "com.dragon.read",
-            "com.duitang.main"
+            "com.duitang.main",
+            "com.duapps.recorder"
+    };
+
+    public static final String[] app_PackName_Native  = {
+            "com.dragon.read"
     };
     private static final Map<String, String> hook_method_app;
 
@@ -32,6 +37,7 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("com.lerist.fakelocation", "e");
         hook_method_app.put("com.dragon.read", "f");
         hook_method_app.put("com.duitang.main", "g");
+        hook_method_app.put("com.duapps.recorder", "h");
     }
 
     @Override
@@ -51,6 +57,15 @@ public class MainHook implements IXposedHookLoadPackage {
     public boolean check_app_package_name(String name){
         for (String s : app_PackName) {
             if (name.equals(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean check_app_native(String name){
+        for (String s : app_PackName_Native){
+            if(name.equals(s)){
                 return true;
             }
         }
