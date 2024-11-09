@@ -7,6 +7,7 @@ import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public class com_clover_daysmatter_vip {
+    @SuppressWarnings("unchecked")
     public static void hook_init(XC_LoadPackage.LoadPackageParam lpparam){
         XposedHelpers.findAndHookMethod(
                 "com.clover.daysmatter.o0$OooO00o",
