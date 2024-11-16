@@ -19,5 +19,8 @@
         <item>com.duitang.main</item>
         <item>com.duapps.recorder</item>
         <item>com.wangc.bill</item>
+        <item>cn.ticktick.task</item>
+        <item>com.geektoy.nfctool</item>
+        <item>com.mutangtech.qianji</item>
     </string-array>
 </resources>

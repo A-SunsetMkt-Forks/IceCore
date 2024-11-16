@@ -17,4 +17,5 @@
     <string name="attachment_summary_on">未开发完成
     </string>
     <string name="attachment_summary_off">未开发完成</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

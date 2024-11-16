@@ -10,6 +10,9 @@ import me.bingyue.IceCore.hook_ad.fanqie_xiao_suo;
 import me.bingyue.IceCore.hook_vip.duitang_vip;
 import me.bingyue.IceCore.hook_vip.xiaoxiong_vip;
 import me.bingyue.IceCore.hook_vip.com_wangc_bill_vip;
+import me.bingyue.IceCore.hook_vip.cn_ticktick_task_vip;
+import me.bingyue.IceCore.hook_vip.com_geektoy_nfctool_vip;
+import me.bingyue.IceCore.hook_vip.qianji_vip;
 
 
 public class hook_core{
@@ -35,6 +38,12 @@ public class hook_core{
 
     public void h(XC_LoadPackage.LoadPackageParam lpparam) { xiaoxiong_vip.hook_init(lpparam); }
 
-    public void k(XC_LoadPackage.LoadPackageParam lpparam) { com_wangc_bill_vip.hook_init(lpparam);}
+    public void k(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException, IllegalAccessException, InstantiationException { com_wangc_bill_vip.hook_init(lpparam); com_wangc_bill_vip.hook_viptype(lpparam);}
+
+    public void l(XC_LoadPackage.LoadPackageParam lpparam)  {cn_ticktick_task_vip.hook_init(lpparam);}
+
+    public void n(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException { com_geektoy_nfctool_vip.hook_init(lpparam);}
+
+    public void m(XC_LoadPackage.LoadPackageParam lpparam) {qianji_vip.hook_init(lpparam); qianji_vip.hook_account_check_vip(lpparam);}
 
 }

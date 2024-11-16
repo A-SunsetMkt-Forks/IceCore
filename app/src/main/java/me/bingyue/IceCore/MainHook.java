@@ -21,7 +21,10 @@ public class MainHook implements IXposedHookLoadPackage {
             "com.dragon.read",
             "com.duitang.main",
             "com.duapps.recorder",
-            "com.wangc.bill"
+            "com.wangc.bill",
+            "cn.ticktick.task",
+            "com.geektoy.nfctool",
+            "com.mutangtech.qianji"
     };
 
     public static final String[] app_PackName_Native  = {
@@ -40,6 +43,9 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("com.duitang.main", "g");
         hook_method_app.put("com.duapps.recorder", "h");
         hook_method_app.put("com.wangc.bill", "k");
+        hook_method_app.put("cn.ticktick.task", "l");
+        hook_method_app.put("com.geektoy.nfctool", "n");
+        hook_method_app.put("com.mutangtech.qianji", "m");
     }
 
     @Override
@@ -47,10 +53,10 @@ public class MainHook implements IXposedHookLoadPackage {
         if (check_app_package_name(lpparam.packageName)){
             hook_core hookInstance = new hook_core();
             Class<?> clazz = hookInstance.getClass();
-            try {
+            try{
                 Method method = clazz.getMethod(hook_method_app.get(lpparam.packageName), XC_LoadPackage.LoadPackageParam.class);
                 method.invoke(hookInstance, lpparam);
-            } catch (Exception e){
+            }catch (Exception e4){
 
             }
         }
