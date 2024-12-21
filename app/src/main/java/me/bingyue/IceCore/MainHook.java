@@ -1,16 +1,20 @@
 package me.bingyue.IceCore;
 
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
+import de.robv.android.xposed.XC_MethodReplacement;
+import de.robv.android.xposed.XSharedPreferences;
+import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 
 public class MainHook implements IXposedHookLoadPackage {
-
 
     public static final String[] app_PackName  = {
             "com.when.coco",
@@ -24,12 +28,12 @@ public class MainHook implements IXposedHookLoadPackage {
             "com.wangc.bill",
             "cn.ticktick.task",
             "com.geektoy.nfctool",
-            "com.mutangtech.qianji"
+            "com.mutangtech.qianji",
+            "com.nowcasting.activity",
+            "com.vmos.pro",
+            "com.estrongs.android.pop"
     };
 
-    public static final String[] app_PackName_Native  = {
-            "com.dragon.read"
-    };
     private static final Map<String, String> hook_method_app;
 
     static {
@@ -46,11 +50,27 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("cn.ticktick.task", "l");
         hook_method_app.put("com.geektoy.nfctool", "n");
         hook_method_app.put("com.mutangtech.qianji", "m");
+        hook_method_app.put("com.nowcasting.activity", "w");
+        hook_method_app.put("com.vmos.pro", "y");
+        hook_method_app.put("com.estrongs.android.pop", "a1");
     }
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
+        if(Objects.equals(lpparam.packageName, "me.bingyue.IceCore")){
+            XposedHelpers.findAndHookMethod("me.bingyue.IceCore.activity.MainActivityKt", lpparam.classLoader, "isModuleActivated", XC_MethodReplacement.returnConstant(true));
+        }
         if (check_app_package_name(lpparam.packageName)){
+            XSharedPreferences xsp = new XSharedPreferences("me.bingyue.IceCore", "config");
+            xsp.makeWorldReadable();
+            Class<?> configClass = Class.forName("me.bingyue.IceCore.config.Config");
+            Field[] fields = configClass.getDeclaredFields();
+            for (Field field : fields) {
+                if (field.getType() == boolean.class && java.lang.reflect.Modifier.isStatic(field.getModifiers())) {
+                    field.setAccessible(true);
+                    field.set(null, xsp.getBoolean(field.getName(), true));
+                }
+            }
             hook_core hookInstance = new hook_core();
             Class<?> clazz = hookInstance.getClass();
             try{
@@ -71,12 +91,4 @@ public class MainHook implements IXposedHookLoadPackage {
         return false;
     }
 
-    public boolean check_app_native(String name){
-        for (String s : app_PackName_Native){
-            if(name.equals(s)){
-                return true;
-            }
-        }
-        return false;
-    }
 }

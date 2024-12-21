@@ -1,18 +1,21 @@
 package me.bingyue.IceCore;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
-import me.bingyue.IceCore.hook_vip.com_clover_daysmatter_vip;
-import me.bingyue.IceCore.hook_vip.com_when_coco_vip;
-import me.bingyue.IceCore.hook_vip.me_mapleaf_calendar_vip;
-import me.bingyue.IceCore.hook_vip.webn_stopapp_vip;
-import me.bingyue.IceCore.hook_vip.fake_location_vip;
-import me.bingyue.IceCore.hook_ad.fanqie_xiao_suo;
-import me.bingyue.IceCore.hook_vip.duitang_vip;
-import me.bingyue.IceCore.hook_vip.xiaoxiong_vip;
-import me.bingyue.IceCore.hook_vip.com_wangc_bill_vip;
-import me.bingyue.IceCore.hook_vip.cn_ticktick_task_vip;
-import me.bingyue.IceCore.hook_vip.com_geektoy_nfctool_vip;
-import me.bingyue.IceCore.hook_vip.qianji_vip;
+import me.bingyue.IceCore.hook_app.com_clover_daysmatter_vip;
+import me.bingyue.IceCore.hook_app.com_when_coco_vip;
+import me.bingyue.IceCore.hook_app.me_mapleaf_calendar_vip;
+import me.bingyue.IceCore.hook_app.webn_stopapp_vip;
+import me.bingyue.IceCore.hook_app.fake_location_vip;
+import me.bingyue.IceCore.hook_app.fanqie_xiao_suo;
+import me.bingyue.IceCore.hook_app.duitang_vip;
+import me.bingyue.IceCore.hook_app.xiaoxiong_vip;
+import me.bingyue.IceCore.hook_app.com_wangc_bill_vip;
+import me.bingyue.IceCore.hook_app.cn_ticktick_task_vip;
+import me.bingyue.IceCore.hook_app.com_geektoy_nfctool_vip;
+import me.bingyue.IceCore.hook_app.qianji_vip;
+import me.bingyue.IceCore.hook_app.caiyun_weather;
+import me.bingyue.IceCore.hook_app.vmos_pro;
+import me.bingyue.IceCore.hook_app.com_estrongs_android_pop;
 
 
 public class hook_core{
@@ -38,7 +41,7 @@ public class hook_core{
 
     public void h(XC_LoadPackage.LoadPackageParam lpparam) { xiaoxiong_vip.hook_init(lpparam); }
 
-    public void k(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException, IllegalAccessException, InstantiationException { com_wangc_bill_vip.hook_init(lpparam); com_wangc_bill_vip.hook_viptype(lpparam);}
+    public void k(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException, IllegalAccessException, InstantiationException { com_wangc_bill_vip.hook_init(lpparam);}
 
     public void l(XC_LoadPackage.LoadPackageParam lpparam)  {cn_ticktick_task_vip.hook_init(lpparam);}
 
@@ -46,4 +49,9 @@ public class hook_core{
 
     public void m(XC_LoadPackage.LoadPackageParam lpparam) {qianji_vip.hook_init(lpparam); qianji_vip.hook_account_check_vip(lpparam);}
 
+    public void w(XC_LoadPackage.LoadPackageParam lpparam) {caiyun_weather.hook_init(lpparam);}
+
+    public void y(XC_LoadPackage.LoadPackageParam lpparam) {vmos_pro.hook_init(lpparam);}
+
+    public void a1(XC_LoadPackage.LoadPackageParam lpparam) {com_estrongs_android_pop.hook_init(lpparam);}
 }

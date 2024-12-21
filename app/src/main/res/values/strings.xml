@@ -1,21 +1,10 @@
 <resources>
     <string name="app_name">冰社</string>
-    <!-- Settings Activity Title -->
-    <string name="title_activity_settings">Settings</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header">冰社的模块设置</string>
-    <string name="sync_header">目前还没开发完毕</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">未开发完成</string>
-    <string name="reply_title">未开发完成</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">未开发完成</string>
-    <string name="attachment_title">未开发完成</string>
-    <string name="attachment_summary_on">未开发完成
-    </string>
-    <string name="attachment_summary_off">未开发完成</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">冰社</string>
+    <string name="xposed_status_no">模块未激活</string>
+    <string name="xposed_status_yes">模块已激活</string>
+    <string name="Module_Setting">模块设置</string>
+    <string name="Github">求Star</string>
+    <string name="title_activity_module">模块设置</string>
+    <string name="Donate">支持开发</string>
 </resources>

@@ -29,9 +29,24 @@
 -keepattributes Signature
 -keepattributes SourceFile,LineNumberTable
 -optimizations !code/simplification/cast,!field/*,!class/merging/*
--keep public class me.bingyue.IceCore.MainHook
+-keep public class me.bingyue.IceCore.activity.MainActivityKt { isModuleActivated(); }
 -keep public class me.bingyue.IceCore.hook_core
+-keep public class me.bingyue.IceCore.MainHook
+-keep class me.bingyue.IceCore.config.Config {
+    public static <fields>;
+}
 -keep class me.bingyue.IceCore.hook_core {
     public void *(de.robv.android.xposed.callbacks.XC_LoadPackage$LoadPackageParam);
 }
+-dontwarn org.bouncycastle.jsse.BCSSLParameters
+-dontwarn org.bouncycastle.jsse.BCSSLSocket
+-dontwarn org.bouncycastle.jsse.provider.BouncyCastleJsseProvider
+-dontwarn org.conscrypt.Conscrypt$Version
+-dontwarn org.conscrypt.Conscrypt
+-dontwarn org.conscrypt.ConscryptHostnameVerifier
+-dontwarn org.openjsse.javax.net.ssl.SSLParameters
+-dontwarn org.openjsse.javax.net.ssl.SSLSocket
+-dontwarn org.openjsse.net.ssl.OpenJSSE
+
+
 

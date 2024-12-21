@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IceCore</string>
+    <string name="title_activity_main">IceCore</string>
+    <string name="xposed_status_no">Not activated</string>
+    <string name="xposed_status_yes">Activated</string>
+    <string name="Module_Setting">Module settings</string>
+    <string name="Github">Github</string>
+    <string name="title_activity_module">Module settings</string>
+    <string name="Donate">Donate</string>
+</resources>
