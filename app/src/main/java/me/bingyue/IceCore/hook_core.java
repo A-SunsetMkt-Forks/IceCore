@@ -16,6 +16,8 @@ import me.bingyue.IceCore.hook_app.qianji_vip;
 import me.bingyue.IceCore.hook_app.caiyun_weather;
 import me.bingyue.IceCore.hook_app.vmos_pro;
 import me.bingyue.IceCore.hook_app.com_estrongs_android_pop;
+import me.bingyue.IceCore.hook_app.cn_com_langeasy_LangEasyLexis;
+import me.bingyue.IceCore.hook_app.com_lerist_autocmd;
 
 
 public class hook_core{
@@ -54,4 +56,8 @@ public class hook_core{
     public void y(XC_LoadPackage.LoadPackageParam lpparam) {vmos_pro.hook_init(lpparam);}
 
     public void a1(XC_LoadPackage.LoadPackageParam lpparam) {com_estrongs_android_pop.hook_init(lpparam);}
+
+    public void a2(XC_LoadPackage.LoadPackageParam lpparam) {cn_com_langeasy_LangEasyLexis.hook_init(lpparam);}
+
+    public void b2(XC_LoadPackage.LoadPackageParam lpparam) {com_lerist_autocmd.hook_init(lpparam);}
 }

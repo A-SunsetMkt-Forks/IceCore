@@ -164,8 +164,12 @@ fun Module_Setting(screenHeight : Dp, screenWidth: Dp, b: List<Float>) {
                     shape = RoundedCornerShape(55.dp) // 保持圆角比例
                 )
                 .clickable {
-                    val intent = Intent(context, ModuleActivity::class.java)
-                    context.startActivity(intent)
+                    if(!isModuleActivated()){
+                        Toast.makeText(context, "请先前往lsposed激活模块，再进入模块设置", Toast.LENGTH_SHORT).show()
+                    }else{
+                        val intent = Intent(context, ModuleActivity::class.java)
+                        context.startActivity(intent)
+                    }
                 }
         )
         Text(

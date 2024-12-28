@@ -72,52 +72,15 @@ fun ModuleSettingsScreen() {
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
-        // 小标题 + 分界线
-        SectionTitle("Fake Location")
 
-        // 文本 + 切换键
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_lerist_fakelocation__vip")
-        SettingItemWithSwitch("去除APP黑名单", "如上所述", "com_lerist_fakelocation__black_app")
-        SettingItemWithSwitch("去除服务器验证", "防止定位突然关闭", "com_lerist_fakelocation__verify")
-
-        SectionTitle("彩云天气")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_nowcasting_activity__isvip")
-
-        SectionTitle("滴滴清单")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","cn_ticktick_task__isvip")
-
-        SectionTitle("倒数日")
-        SettingItemWithSwitch("破解内购", "开启之后直接去购买会员，别付款直接返回","com_clover_daysmatter__pay")
-
-        SectionTitle("ES文件管理器")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_estrongs_android_pop__isvip")
-
-        SectionTitle("nfc tool")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_geektoy_nfctool__isvip")
-
-        SectionTitle("一木记帐")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_wangc_bill__isvip")
-
-        SectionTitle("365日历")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_when_coco__isvip")
-
-        SectionTitle("堆糖")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_duitang_main__isvip")
-
-        SectionTitle("番茄小说")
-        SettingItemWithSwitch("启用去广告", "仅去广告","com_dragon_read__isvip")
-
-        SectionTitle("一叶日历")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","me_mapleaf_calendar__isvip")
-
-        SectionTitle("钱迹")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_mutangtech_qianji__isvip")
-
-        SectionTitle("小熊录屏")
-        SettingItemWithSwitch("启用本地VIP", "仅本地生效","com_duapps_recorder__isvip")
-
-        SectionTitle("小黑屋")
-        SettingItemWithSwitch("启用激活码破解", "开启后去激活码随便输入一个支付宝订单号即可","web1n_stopapp__vip",)
+        // 使用 for 循环遍历 Map
+        Config().settingsMap.forEach { (sectionTitle, settings) ->
+            SectionTitle(title = sectionTitle);
+            settings.forEach { setting ->
+                val (name, id, description) = setting
+                SettingItemWithSwitch(label = name, description = description, id = id)
+            }
+        }
     }
 }
 

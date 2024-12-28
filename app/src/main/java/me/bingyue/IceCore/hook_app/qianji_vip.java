@@ -32,17 +32,19 @@ public class qianji_vip {
 
     public static void hook_account_check_vip(XC_LoadPackage.LoadPackageParam lpparam){
         XposedHelpers.findAndHookMethod(
-                "s6.b",
+                "t6.a",
                 lpparam.classLoader,
-                "c",
+                "getEm",
                 new XC_MethodHook() {
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                         super.beforeHookedMethod(param);
-                         int a = (int) param.args[0];
-                         if(a == 8888){
-                             param.args[1] = "{\"msg\":\"\"}";
-                         }
+                    }
+
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                        super.afterHookedMethod(param);
+                        param.setResult("{\"msg\":\"\"}");
                     }
                 }
         );

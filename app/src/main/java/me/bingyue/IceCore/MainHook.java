@@ -16,23 +16,6 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public class MainHook implements IXposedHookLoadPackage {
 
-    public static final String[] app_PackName  = {
-            "com.when.coco",
-            "me.mapleaf.calendar",
-            "com.clover.daysmatter",
-            "web1n.stopapp",
-            "com.lerist.fakelocation",
-            "com.dragon.read",
-            "com.duitang.main",
-            "com.duapps.recorder",
-            "com.wangc.bill",
-            "cn.ticktick.task",
-            "com.geektoy.nfctool",
-            "com.mutangtech.qianji",
-            "com.nowcasting.activity",
-            "com.vmos.pro",
-            "com.estrongs.android.pop"
-    };
 
     private static final Map<String, String> hook_method_app;
 
@@ -53,6 +36,8 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("com.nowcasting.activity", "w");
         hook_method_app.put("com.vmos.pro", "y");
         hook_method_app.put("com.estrongs.android.pop", "a1");
+        hook_method_app.put("cn.com.langeasy.LangEasyLexis", "a2");
+        hook_method_app.put("com.lerist.autocmd", "b2");
     }
 
     @Override
@@ -83,7 +68,7 @@ public class MainHook implements IXposedHookLoadPackage {
     }
 
     public boolean check_app_package_name(String name){
-        for (String s : app_PackName) {
+        for (String s : hook_method_app.keySet()) {
             if (name.equals(s)) {
                 return true;
             }

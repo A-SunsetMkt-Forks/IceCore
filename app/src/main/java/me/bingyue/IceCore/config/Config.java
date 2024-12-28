@@ -10,7 +10,9 @@ public class Config {
     public static boolean com_estrongs_android_pop__isvip = true;
     public static boolean com_geektoy_nfctool__isvip = true;
     public static boolean com_wangc_bill__isvip = true;
-    
+
+    public static boolean com_lerist_autocmd__vip = true;
+    public static boolean cn_com_langeasy_LangEasyLexis__isvip = true;
     public static boolean com_when_coco__isvip = true;
     public static boolean com_duitang_main__isvip = true;
     public static boolean com_dragon_read__isvip = true;

@@ -29,9 +29,28 @@ public class fake_location_vip {
                         hook_vip(finalClassLoader.loadClass("\u0D5F.\u0588"));
                         hook_black_app(finalClassLoader.loadClass("\u0D5F.\u052C"));
                         hook_black_app_se(finalClassLoader.loadClass("\u0CF2.\u0528"));
+                        hook_verify(finalClassLoader.loadClass("\u0828.\u052C"));
                     }
                 }
         );
+    }
+
+    public static void hook_verify(Class init){
+        if (!Config.com_lerist_fakelocation__verify){
+            return;
+        }
+        XposedHelpers.findAndHookMethod(init, "\u052C", new XC_MethodHook() {
+            @Override
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                super.beforeHookedMethod(param);
+            }
+
+            @Override
+            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                super.afterHookedMethod(param);
+                param.setResult(true);
+            }
+        });
     }
     public static void hook_vip(Class initActivityClazz){
         if(!Config.com_lerist_fakelocation__vip){
@@ -76,7 +95,7 @@ public class fake_location_vip {
             return;
         }
        XposedHelpers.findAndHookMethod(init
-               , "\u0529", new XC_MethodHook() {
+               , "\u052C", new XC_MethodHook() {
                    @Override
                    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                        super.beforeHookedMethod(param);

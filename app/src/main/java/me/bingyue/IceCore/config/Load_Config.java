@@ -39,13 +39,6 @@ public class Load_Config {
             for (Field field: fields){
                 insertData(field.getName(), Boolean.compare(field.getBoolean(null), false));
             }
-        }else{
-            for (Field field : fields) {
-                if (field.getType() == boolean.class && java.lang.reflect.Modifier.isStatic(field.getModifiers())) {
-                    field.setAccessible(true);
-                    field.set(null, queryDataByName(field.getName()));
-                }
-            }
         }
     }
 
