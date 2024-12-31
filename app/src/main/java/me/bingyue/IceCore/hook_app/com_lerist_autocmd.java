@@ -28,6 +28,13 @@ public class com_lerist_autocmd {
                         param.setResult(true);
                     }
                 });
+                XposedHelpers.findAndHookMethod("\u0793.\u0221", classLoader, "\u0D08", new XC_MethodHook() {
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                        param.setResult(1);
+                        super.afterHookedMethod(param);
+                    }
+                });
             }
         });
     }

@@ -2,9 +2,14 @@ package me.bingyue.IceCore.activity
 
 class Config {
     val  settingsMap = mapOf(
-        "Fake Location" to listOf(
+        "Fake Location New" to listOf(
             listOf("启用本地VIP", "com_lerist_fakelocation__vip", "仅本地生效"),
             listOf("去除APP黑名单", "com_lerist_fakelocation__black_app", "如上所述"),
+            listOf("去除服务器验证", "com_lerist_fakelocation__verify", "防止定位突然关闭")
+        ),
+        "Fake Location 1.3.2.2" to listOf(
+            listOf("总开关", "com_lerist_fakelocation__oid_all", "如果想使用请手动勾选系统框架\n同时把new上面的关了"),
+            listOf("启用本地VIP", "com_lerist_fakelocation__vip_old", "仅本地生效"),
             listOf("去除服务器验证", "com_lerist_fakelocation__verify", "防止定位突然关闭")
         ),
         "Autocmd+" to listOf(
@@ -51,6 +56,12 @@ class Config {
         ),
         "不背单词" to listOf(
             listOf("启用本地VIP", "cn_com_langeasy_LangEasyLexis__isvip", "仅本地生效")
+        ),
+        "无痛单词" to listOf(
+            listOf("启用本地VIP", "tech_xiangzi_painless__isvip", "仅本地生效")
+        ),
+        "潮汐" to listOf(
+            listOf("启用本地VIP", "io_moreless_tide__isvip", "仅本地生效")
         )
     )
 }

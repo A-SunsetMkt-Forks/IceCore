@@ -8,11 +8,11 @@ import java.util.Map;
 import java.util.Objects;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
+import me.bingyue.IceCore.hook_app.android;
 import de.robv.android.xposed.XC_MethodReplacement;
 import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
-
 
 public class MainHook implements IXposedHookLoadPackage {
 
@@ -38,10 +38,15 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("com.estrongs.android.pop", "a1");
         hook_method_app.put("cn.com.langeasy.LangEasyLexis", "a2");
         hook_method_app.put("com.lerist.autocmd", "b2");
+        hook_method_app.put("tech.xiangzi.painless", "c2");
+        hook_method_app.put("io.moreless.tide", "c3");
     }
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
+        if(Objects.equals(lpparam.packageName, "android")){
+            android.hook_init();
+        }
         if(Objects.equals(lpparam.packageName, "me.bingyue.IceCore")){
             XposedHelpers.findAndHookMethod("me.bingyue.IceCore.activity.MainActivityKt", lpparam.classLoader, "isModuleActivated", XC_MethodReplacement.returnConstant(true));
         }

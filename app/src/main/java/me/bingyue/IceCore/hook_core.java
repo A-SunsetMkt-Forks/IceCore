@@ -1,6 +1,7 @@
 package me.bingyue.IceCore;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import me.bingyue.IceCore.config.Config;
 import me.bingyue.IceCore.hook_app.com_clover_daysmatter_vip;
 import me.bingyue.IceCore.hook_app.com_when_coco_vip;
 import me.bingyue.IceCore.hook_app.me_mapleaf_calendar_vip;
@@ -18,6 +19,9 @@ import me.bingyue.IceCore.hook_app.vmos_pro;
 import me.bingyue.IceCore.hook_app.com_estrongs_android_pop;
 import me.bingyue.IceCore.hook_app.cn_com_langeasy_LangEasyLexis;
 import me.bingyue.IceCore.hook_app.com_lerist_autocmd;
+import me.bingyue.IceCore.hook_app.com_lerist_fakelocation_old;
+import me.bingyue.IceCore.hook_app.io_moreless_tide;
+import me.bingyue.IceCore.hook_app.tech_xiangzi_painless;
 
 
 public class hook_core{
@@ -33,7 +37,13 @@ public class hook_core{
         webn_stopapp_vip.hook_init(lpparam);
     }
 
-    public void e(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException { fake_location_vip.hook_init(lpparam); }
+    public void e(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException {
+        if(Config.com_lerist_fakelocation__oid_all){
+            com_lerist_fakelocation_old.hook_init(lpparam);
+        }else{
+            fake_location_vip.hook_init(lpparam);
+        }
+    }
 
     public void f(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException{ fanqie_xiao_suo.hook_init(lpparam); }
 
@@ -60,4 +70,9 @@ public class hook_core{
     public void a2(XC_LoadPackage.LoadPackageParam lpparam) {cn_com_langeasy_LangEasyLexis.hook_init(lpparam);}
 
     public void b2(XC_LoadPackage.LoadPackageParam lpparam) {com_lerist_autocmd.hook_init(lpparam);}
+
+    public void c2(XC_LoadPackage.LoadPackageParam lpparam) {tech_xiangzi_painless.hook_init(lpparam);}
+
+    public void c3(XC_LoadPackage.LoadPackageParam lpparam) {io_moreless_tide.hook_init(lpparam);}
+
 }
