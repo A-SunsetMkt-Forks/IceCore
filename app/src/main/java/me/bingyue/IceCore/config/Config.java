@@ -2,10 +2,10 @@ package me.bingyue.IceCore.config;
 
 public class Config {
     public static boolean com_lerist_fakelocation__oid_all = true;
-    public static boolean com_lerist_fakelocation__vip = true;
-    public static boolean com_lerist_fakelocation__black_app = true;
-    public static boolean com_lerist_fakelocation__verify = true;
+    public static boolean com_lerist_fakelocation__vip = false;
+    public static boolean com_lerist_fakelocation__verify = false;
     public static boolean com_lerist_fakelocation__vip_old = true;
+    public static boolean com_lerist_fakelocation__all = false;
     public static boolean com_lerist_fakelocation__verify_old = true;
     public static boolean com_nowcasting_activity__isvip = true;
     public static boolean cn_ticktick_task__isvip = true;

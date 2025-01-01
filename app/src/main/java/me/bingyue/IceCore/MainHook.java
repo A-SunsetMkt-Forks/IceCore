@@ -45,7 +45,7 @@ public class MainHook implements IXposedHookLoadPackage {
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
         if(Objects.equals(lpparam.packageName, "android")){
-            android.hook_init();
+            android.hookInit();
         }
         if(Objects.equals(lpparam.packageName, "me.bingyue.IceCore")){
             XposedHelpers.findAndHookMethod("me.bingyue.IceCore.activity.MainActivityKt", lpparam.classLoader, "isModuleActivated", XC_MethodReplacement.returnConstant(true));

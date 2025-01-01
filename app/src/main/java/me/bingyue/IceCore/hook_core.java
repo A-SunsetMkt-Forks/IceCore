@@ -1,5 +1,7 @@
 package me.bingyue.IceCore;
 
+import android.util.Log;
+
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import me.bingyue.IceCore.config.Config;
 import me.bingyue.IceCore.hook_app.com_clover_daysmatter_vip;
@@ -41,6 +43,7 @@ public class hook_core{
         if(Config.com_lerist_fakelocation__oid_all){
             com_lerist_fakelocation_old.hook_init(lpparam);
         }else{
+            Log.d("test", "1");
             fake_location_vip.hook_init(lpparam);
         }
     }
