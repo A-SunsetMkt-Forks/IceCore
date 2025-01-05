@@ -4,27 +4,7 @@ import android.util.Log;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import me.bingyue.IceCore.config.Config;
-import me.bingyue.IceCore.hook_app.com_clover_daysmatter_vip;
-import me.bingyue.IceCore.hook_app.com_when_coco_vip;
-import me.bingyue.IceCore.hook_app.me_mapleaf_calendar_vip;
-import me.bingyue.IceCore.hook_app.webn_stopapp_vip;
-import me.bingyue.IceCore.hook_app.fake_location_vip;
-import me.bingyue.IceCore.hook_app.fanqie_xiao_suo;
-import me.bingyue.IceCore.hook_app.duitang_vip;
-import me.bingyue.IceCore.hook_app.xiaoxiong_vip;
-import me.bingyue.IceCore.hook_app.com_wangc_bill_vip;
-import me.bingyue.IceCore.hook_app.cn_ticktick_task_vip;
-import me.bingyue.IceCore.hook_app.com_geektoy_nfctool_vip;
-import me.bingyue.IceCore.hook_app.qianji_vip;
-import me.bingyue.IceCore.hook_app.caiyun_weather;
-import me.bingyue.IceCore.hook_app.vmos_pro;
-import me.bingyue.IceCore.hook_app.com_estrongs_android_pop;
-import me.bingyue.IceCore.hook_app.cn_com_langeasy_LangEasyLexis;
-import me.bingyue.IceCore.hook_app.com_lerist_autocmd;
-import me.bingyue.IceCore.hook_app.com_lerist_fakelocation_old;
-import me.bingyue.IceCore.hook_app.io_moreless_tide;
-import me.bingyue.IceCore.hook_app.tech_xiangzi_painless;
-
+import me.bingyue.IceCore.hook_app.*;
 
 public class hook_core{
     public void a(XC_LoadPackage.LoadPackageParam lpparam) {
@@ -43,11 +23,11 @@ public class hook_core{
         if(Config.com_lerist_fakelocation__oid_all){
             com_lerist_fakelocation_old.hook_init(lpparam);
         }else{
-            Log.d("test", "1");
             fake_location_vip.hook_init(lpparam);
         }
     }
 
+    public void cf(XC_LoadPackage.LoadPackageParam lpparam) {com_jdjdc_jdfastjdc.hook_init(lpparam);}
     public void f(XC_LoadPackage.LoadPackageParam lpparam) throws ClassNotFoundException{ fanqie_xiao_suo.hook_init(lpparam); }
 
     public void g(XC_LoadPackage.LoadPackageParam lpparam){

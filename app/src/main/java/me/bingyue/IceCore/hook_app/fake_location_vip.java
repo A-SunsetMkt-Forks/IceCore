@@ -3,9 +3,6 @@ package me.bingyue.IceCore.hook_app;
 import android.app.Application;
 import android.content.Context;
 import android.util.Base64;
-import android.util.Log;
-
-import java.util.ArrayList;
 import java.util.Objects;
 
 import javax.crypto.Cipher;
@@ -14,6 +11,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XC_MethodReplacement;
 import me.bingyue.IceCore.config.Config;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
@@ -30,7 +28,7 @@ public class fake_location_vip {
                 super.afterHookedMethod(param);
                 Context context = (Context) param.args[0];
                 ClassLoader classLoader = context.getClassLoader();
-                XposedHelpers.findAndHookMethod("\u0627.\u078C$\u037F", classLoader,"\u0529", java.lang.String.class, new XC_MethodHook() {
+                XposedHelpers.findAndHookMethod("ا.ތ$Ϳ", classLoader,"ԩ", java.lang.String.class, new XC_MethodHook() {
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                         if(Config.com_lerist_fakelocation__verify){
@@ -42,7 +40,7 @@ public class fake_location_vip {
                         super.afterHookedMethod(param);
                     }
                 });
-
+                XposedHelpers.findAndHookMethod("ဨ.Ϳ$Ԩ", classLoader, "Ϳ", XC_MethodReplacement.DO_NOTHING);
                 Class<?> JSONClass =XposedHelpers.findClass("com.alibaba.fastjson.JSON",classLoader);
                 XposedHelpers.findAndHookMethod("ၼ.Ԩ", classLoader, "Ϳ", java.lang.Class.class, java.lang.String.class, new XC_MethodHook() {
                     @Override
@@ -66,22 +64,32 @@ public class fake_location_vip {
                     }
                     @Override
                     protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                        param.setResult(false);
+                        super.afterHookedMethod(param);
+                    }
+                });
+
+                XposedHelpers.findAndHookMethod("ೲ.Ԩ", classLoader, "Ԭ", java.lang.String.class, new XC_MethodHook() {
+                    @Override
+                    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                        super.beforeHookedMethod(param);
+                    }
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                         param.setResult(true);
                         super.afterHookedMethod(param);
                     }
                 });
 
-                XposedHelpers.findAndHookMethod("\u0CF2.\u0528", classLoader, "\u052C", java.lang.String.class, new XC_MethodHook() {
+                XposedHelpers.findAndHookMethod("ೲ.Ԩ", classLoader, "ԩ", new XC_MethodHook() {
                     @Override
-                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                        param.setResult(true);
+                    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                        super.beforeHookedMethod(param);
                     }
-                });
-
-                XposedHelpers.findAndHookMethod("\u0CF2.\u0528", classLoader, "\u0529", new XC_MethodHook() {
                     @Override
                     protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                         param.setResult(null);
+                        super.afterHookedMethod(param);
                     }
                 });
 
@@ -97,17 +105,7 @@ public class fake_location_vip {
                     }
                 });
 
-                XposedHelpers.findAndHookMethod("ൟ.ֈ", classLoader, "Ԫ", new XC_MethodHook() {
-                    @Override
-                    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                        super.beforeHookedMethod(param);
-                    }
-                    @Override
-                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                        param.setResult(false);
-                        super.afterHookedMethod(param);
-                    }
-                });
+
 
             }
         });

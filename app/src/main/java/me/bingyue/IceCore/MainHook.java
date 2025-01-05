@@ -39,6 +39,7 @@ public class MainHook implements IXposedHookLoadPackage {
         hook_method_app.put("cn.com.langeasy.LangEasyLexis", "a2");
         hook_method_app.put("com.lerist.autocmd", "b2");
         hook_method_app.put("tech.xiangzi.painless", "c2");
+        hook_method_app.put("com.jdjdc.jdfastjdc", "cf");
         hook_method_app.put("io.moreless.tide", "c3");
     }
 
