@@ -5,7 +5,6 @@
 # 冰社 / IceCore
 [![LSPosed](https://img.shields.io/badge/LSPosed-Module-blue.svg)](https://github.com/bingqiu456/IceCore)
 [![Github](https://img.shields.io/badge/Github-IceCore-black.svg)](https://github.com/bingqiu456/IceCore)
-[![QQ_group](https://img.shields.io/badge/QQ%E7%BE%A4-orange?style=flat-square)](https://qm.qq.com/q/)
 
 
 ✨**一个集成了各种好玩功能的Xposed模块，支持获取vip，去除广告，等功能** ✨
@@ -45,7 +44,7 @@
 
 ## ✨联系方式
 
-我们目前有[QQ群](https://qm.qq.com/q/hnbnj43qwM)，[TG频道](https://t.me/bingyue_personal)，可以自由选择加入
+我们目前有[TG频道](https://t.me/bingyue_personal)，可以自由选择加入
 
 ---
 
